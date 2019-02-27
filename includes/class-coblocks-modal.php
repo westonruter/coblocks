@@ -24,7 +24,7 @@ class CoBlocks_Modal {
 	public function __construct() {
 
 		add_action( 'admin_footer', array( $this, 'media_modal' ) );
-		// add_action( 'admin_enqueue_scripts', array( $this, 'admin_scripts' ) );
+		add_action( 'admin_enqueue_scripts', array( $this, 'admin_scripts' ) );
 		add_action( 'coblocks_frame_content', array( $this, 'frame_content' ) );
 
 		// API registration to fetch templates and sections.
@@ -200,10 +200,12 @@ class CoBlocks_Modal {
 				case 'content':
 						$path = $request->get_param( 'path' );
 						$meta = get_post_meta( $path, '_coblocks_attr', true );
-					return array(
-						'meta'    => $meta,
-						'content' => get_post_field( 'post_content', $path ),
-					);
+						$post_content = get_post_field( 'post_content', $path );
+
+						return array(
+							'meta'    => $meta,
+							'content' => str_replace( '<!-- wp:coblocks/column {', '<!-- wp:coblocks/column {"showInserter":false,', $post_content ),
+						);
 					break;
 
 				case 'template_type':
