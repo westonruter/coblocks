@@ -1,4 +1,9 @@
 /**
+ * External dependencies
+ */
+import map from 'lodash/map';
+
+/**
  * Internal dependencies
  */
 import googleFonts from './fonts';
@@ -9,7 +14,7 @@ import googleFonts from './fonts';
 const { __ } = wp.i18n;
 const { Fragment, Component } = wp.element;
 const { withInstanceId } = wp.compose;
-const { BaseControl, SelectControl } = wp.components;
+const { BaseControl, SelectControl, NavigableMenu, Button, Dropdown, Dashicon } = wp.components;
 
 /**
  * FontFamilyPicker Component
@@ -23,7 +28,7 @@ function FontFamilyPicker( { label, value, help, instanceId, onChange, className
 		{ value: 'Times New Roman', label: 'Times New Roman' },
 		{ value: 'Georgia', label: 'Georgia' },
 	];
-	
+
 	//Add Google Fonts
 	Object.keys( googleFonts ).map( ( k, v ) => {
 		fonts.push(
@@ -71,6 +76,34 @@ function FontFamilyPicker( { label, value, help, instanceId, onChange, className
 		onChange( event.target.value );
 	};
 
+	const utilitySizes = [
+			{
+				name: __( 'None' ),
+				size: 0,
+				slug: 'no',
+			},
+			{
+				name: __( 'Small' ),
+				size: 14,
+				slug: 'small',
+			},
+			{
+				name: __( 'Medium' ),
+				size: 24,
+				slug: 'medium',
+			},
+			{
+				name: __( 'Large' ),
+				size: 34,
+				slug: 'large',
+			},{
+				name: __( 'Huge' ),
+				size: 60,
+				slug: 'huge',
+			},
+		];
+
+
 	return(
 		<BaseControl label={ label } id={ id } help={ help } className={ className }>
 			<select
@@ -90,6 +123,41 @@ function FontFamilyPicker( { label, value, help, instanceId, onChange, className
 					</option>
 				) }
 			</select>
+
+			<div className="components-font-size-picker__buttons">
+				<Dropdown
+					className="components-font-size-picker__dropdown"
+					contentClassName="components-font-family-picker__dropdown-content components-coblocks-dimensions-control__dropdown-content"
+					position="bottom"
+					renderToggle={ ( { isOpen, onToggle } ) => (
+						<Button
+							className="components-font-size-picker__selector"
+							isLarge
+							onClick={ onToggle }
+							aria-expanded={ isOpen }
+							aria-label={ __( 'Custom Size' ) }
+						>
+
+						</Button>
+					) }
+					renderContent={ () => (
+						<NavigableMenu>
+							{ fonts.map( ( option, index ) =>
+								<Button
+									key={ `${ option.label }-${ option.value }-${ index }` }
+									onClick={ () => this.onChangeSize( slug, size ) }
+									role="menuitem"
+								>
+									<span className="components-font-size-picker__dropdown-text-size">
+										{ option.label }
+									</span>
+								</Button>
+							) }
+						</NavigableMenu>
+					) }
+				/>
+			</div>
+
 		</BaseControl>
 	);
 }
