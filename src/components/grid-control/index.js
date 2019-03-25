@@ -54,7 +54,7 @@ class CSSGridControl extends Component {
 			{ value: 'bottom-right', label: __( 'Bottom Right' ) },
 		];
 
-		if( !fullscreen ){
+		if ( !fullscreen ) {
 			layoutOptions = [
 				{ value: 'center-left', label: __( 'Center Left' ) },
 				{ value: 'center-center', label: __( 'Center Center' ) },
@@ -171,27 +171,6 @@ class CSSGridControl extends Component {
 					} ) }
 					</ButtonGroup>
 				</div>
-				<ToggleControl
-					label={ __( 'Fullscreen' ) }
-					checked={ !! fullscreen }
-					onChange={ () => {
-						if( fullscreen ){
-							if( [ 'bottom-left', 'top-left' ].includes( layout ) ){
-								setAttributes( {  layout: 'center-left' } )
-							}
-
-							if( [ 'bottom-center', 'top-center' ].includes( layout ) ){
-								setAttributes( {  layout: 'center-center' } )
-							}
-
-							if( [ 'bottom-right', 'top-right' ].includes( layout ) ){
-								setAttributes( {  layout: 'center-right' } )
-							}
-						}
-						setAttributes( {  fullscreen: ! fullscreen } )
-					} }
-					help={ !! fullscreen ? __( 'Fullscreen mode is enabled.' ) : __( 'Toggle to enable fullscreen mode.' ) }
-				/>
 			</Fragment>
 		);
 	}

@@ -166,9 +166,28 @@ class Inspector extends Component {
 							dimensionSize={ paddingSize }
 							saveCoBlocksMeta={ saveCoBlocksMeta }
 						/>
-
 						<CSSGridControl { ...this.props } />
+						<ToggleControl
+							label={ __( 'Fullscreen' ) }
+							checked={ !! fullscreen }
+							onChange={ () => {
+								if( fullscreen ){
+									if( [ 'bottom-left', 'top-left' ].includes( layout ) ){
+										setAttributes( {  layout: 'center-left' } )
+									}
 
+									if( [ 'bottom-center', 'top-center' ].includes( layout ) ){
+										setAttributes( {  layout: 'center-center' } )
+									}
+
+									if( [ 'bottom-right', 'top-right' ].includes( layout ) ){
+										setAttributes( {  layout: 'center-right' } )
+									}
+								}
+								setAttributes( {  fullscreen: ! fullscreen } )
+							} }
+							help={ !! fullscreen ? __( 'Fullscreen mode is enabled.' ) : __( 'Toggle to enable fullscreen mode.' ) }
+						/>
 						<RangeControl
 							label={ __( 'Content width in pixels' ) }
 							value={ parseInt( maxWidth ) }
