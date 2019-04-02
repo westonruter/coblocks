@@ -42,7 +42,6 @@ const TEMPLATE = [
 	],
 ];
 
-
 /**
  * Block edit function
  */
@@ -65,9 +64,11 @@ class Edit extends Component {
 		this.getBrowserWidth();
 		window.addEventListener( 'resize', this.getBrowserWidth.bind(this) );
 	}
+
 	componentWillMount(){
 		this.getBrowserWidth();
 	}
+
 	componentWillUnmount(){
 		window.removeEventListener( 'resize', this.getBrowserWidth.bind(this) );
 	}
@@ -233,16 +234,15 @@ class Edit extends Component {
 						{ ...this.props }
 					/>
 				) }
-				<div
-					className={ classes }
-				>
+
+				<div className={ classes }>
 					<ResizableBox
 						className={ innerClasses }
 						style={ innerStyles }
 						size={ {
 							height: heightResizer.value,
 						} }
-						minHeight="20"
+						minHeight="350"
 						enable={ {
 							top: false,
 							right: false,
@@ -291,7 +291,6 @@ class Edit extends Component {
 								<video playsinline="" autoplay="" muted={ videoMuted } loop={ videoLoop } src={ backgroundImg } ></video>
 							</div>
 						: null }
-
 						<div className="wp-block-coblocks-banner__content">
 							{ ( ! RichText.isEmpty( heading ) || isSelected ) && (
 								<RichText
@@ -315,7 +314,6 @@ class Edit extends Component {
 								/>
 							) }
 						</div>
-
 						<div className="wp-block-coblocks-banner__buttons">
 							<InnerBlocks
 								template={ TEMPLATE }

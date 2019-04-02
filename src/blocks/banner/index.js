@@ -13,13 +13,13 @@ import Edit from './components/edit';
 import BackgroundPanel, { BackgroundAttributes, BackgroundClasses, BackgroundTransforms } from '../../components/background';
 import DimensionsAttributes from '../../components/dimensions-control/attributes';
 import ResponsiveBaseControlAttributes from '../../components/responsive-base-control/attributes';
+
 /**
  * WordPress dependencies
  */
 const { __ } = wp.i18n;
 const { createBlock } = wp.blocks;
 const { RichText, getColorClassName, getFontSizeClass, InnerBlocks } = wp.editor;
-
 
 /**
  * Block constants
