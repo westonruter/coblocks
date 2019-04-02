@@ -8,6 +8,7 @@ import classnames from 'classnames';
  */
 const { __ } = wp.i18n;
 const { Component, Fragment } = wp.element;
+const { BlockIcon } = wp.editor;
 const { compose } = wp.compose;
 const { Placeholder, Spinner, Button, ResizableBox } = wp.components;
 const { withViewportMatch } = wp.viewport;
@@ -291,7 +292,7 @@ class Edit extends Component {
 				<Fragment>
 					<Placeholder
 						key="placeholder"
-						icon={ icons.gif }
+						icon={ <BlockIcon icon={ icons.gif } /> }
 						label={ __( 'Gif' ) }
 						instructions={ __( 'Search for that perfect gif on Giphy' ) }
 						className={ className }>

@@ -1,15 +1,11 @@
 .editor-block-list__block[data-type="coblocks/gif"] {
-
-	.components-placeholder.wp-block-coblocks-gif {
-
-		.dashicon {
-			position: relative;
-			top: -2px;
-		}
+	.components-placeholder__label svg {
+		position: relative;
+		top: -2px;
 	}
 
 	&[data-align="center"] .wp-block-coblocks-gif,
-	&[data-align="center"][data-resized="false"] .wp-block-coblocks-gif>div {
+	&[data-align="center"][data-resized="false"] .wp-block-coblocks-gif > div {
 		margin-left: auto;
 		margin-right: auto;
 	}
@@ -80,7 +76,6 @@
 	}
 
 	&[data-align="center"] {
-
 		.wp-block-coblocks-gif {
 			margin-left: auto !important;
 			margin-right: auto !important;
@@ -106,10 +101,8 @@
 	}
 }
 
-
 // Ensure the resize handles are visible when the image is focused.
 .wp-block-coblocks-gif.is-focused .components-resizable-box__handle {
 	display: block;
 	z-index: z-index(".block-library-image__resize-handlers");
 }
-
