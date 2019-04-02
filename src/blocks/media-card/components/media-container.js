@@ -8,13 +8,14 @@ import includes from 'lodash/includes';
  * Internal dependencies
  */
 import { ALLOWED_MEDIA_TYPES } from './edit';
+import icons from './icons';
 
 /**
  * WordPress dependencies
  */
 const { __ } = wp.i18n;
 const { Component, Fragment } = wp.element;
-const { BlockControls, MediaPlaceholder, MediaUpload } = wp.editor;
+const { BlockControls, MediaPlaceholder, MediaUpload, BlockIcon } = wp.editor;
 const { IconButton, ResizableBox, Toolbar, DropZone, Spinner } = wp.components;
 const { isBlobURL } = wp.blob;
 
@@ -102,9 +103,9 @@ class MediaContainer extends Component {
 					</Fragment>
 				:
 					<MediaPlaceholder
-						icon="format-image"
+						icon={ <BlockIcon icon={ icons.mediaContainerIcon } /> }
 						labels={ {
-							title: __( 'Media' ),
+							title: __( 'Media area' ),
 						} }
 						className={ figureClass }
 						onSelect={ onSelectMedia }
