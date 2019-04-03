@@ -8,12 +8,6 @@ const { SVG, Path, G } = wp.components;
  */
 const icons = {};
 
-icons.accordion =
-<svg className="components-coblocks-svg" aria-hidden role="img" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg"><path d="m16.0833333 12h-14.16666663c-1.05416667 0-1.91666667.9-1.91666667 2v2c0 1.1.8625 2 1.91666667 2h14.16666663c1.0541667 0 1.9166667-.9 1.9166667-2v-2c0-1.1-.8625-2-1.9166667-2zm0 4h-14.16666663v-2h14.16666663zm0-16h-14.16666663c-1.05416667 0-1.91666667.9-1.91666667 2v6c0 1.1.8625 2 1.91666667 2h14.16666663c1.0541667 0 1.9166667-.9 1.9166667-2v-6c0-1.1-.8625-2-1.9166667-2zm0 8h-14.16666663v-4h14.16666663z" transform="translate(3 3)"/></svg>
-
-icons.accordionItem =
-<svg className="components-coblocks-svg" aria-hidden role="img" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg"><g fill-rule="evenodd" transform="translate(3 3)"><path d="m16.0833333 0h-14.16666663c-1.05416667 0-1.91666667.9-1.91666667 2v14c0 1.1.8625 2 1.91666667 2h14.16666663c1.0541667 0 1.9166667-.9 1.9166667-2v-14c0-1.1-.8625-2-1.9166667-2zm0 16h-14.16666663v-14h14.16666663z" fill-rule="nonzero"/><path d="m1 1h16v5h-16z"/></g></svg>;
-
 icons.actionGrid =
 <svg className="components-coblocks-svg" aria-hidden role="img" focusable="false" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
 	<g fill="currentColor" fillRule="evenodd"><path d="m16 0h-14c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2v-12c0-1.1-.9-2-2-2zm0 14h-14v-12h14z" fillRule="nonzero" transform="translate(3 4)"/><path d="m11 6h2v12h-2z"/></g>
@@ -55,15 +49,6 @@ icons.imageFeature =
 icons.imagePanel =
 <svg className="dashicon components-coblocks-svg" aria-hidden role="img" focusable="false" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
 	<g transform="matrix(-1 0 0 -1 21 21)"><path d="m9 0h-7c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h7z"/><path d="m20.0084135 13.0084135v.983173h-14.00000004v-.983173h-2v-7.00000004c0-1.1.9-2 2-2h14.00000004c1.1 0 2 .9 2 2v7.00000004zm0 0v-7.00000004h-14.00000004v7.00000004z" transform="matrix(0 1 -1 0 22.008413 -4.008413)"/></g>
-</svg>;
-
-icons.open =
-<svg className="dashicon components-coblocks-svg" role="img" focusable="false" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20">
-    <g stroke="none" stroke-width="1" fill="none" fillRule="evenodd">
-        <g transform="translate(7.000000, 3.000000)" fill="currentColor" fillRule="nonzero">
-            <polygon points="0 12.4144941 2.9165 12.4144941 0 9.24610888 2.5 9.24610888 2.5 4.7525778 0 4.7525778 2.9165 1.5841926 0 1.5841926 0 6.10622664e-16 7 6.10622664e-16 7 1.5841926 4.0835 1.5841926 7 4.7525778 4.5 4.7525778 4.5 9.24610888 7 9.24610888 4.0835 12.4144941 7 12.4144941 7 13.9986867 0 13.9986867"></polygon>
-        </g>
-    </g>
 </svg>;
 
 icons.alert =
