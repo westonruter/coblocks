@@ -35,7 +35,7 @@ const { isBlobURL } = wp.blob;
 */
 const ALLOWED_BLOCKS = [ 'coblocks/buttons' ];
 const TEMPLATE = [
-	[ 'coblocks/buttons', { contentAlign: 'left', items: 1 },
+	[ 'coblocks/buttons', { contentAlign: 'right', items: 1 },
 		[
 			[ 'core/button', { text: _x( 'Get Started', 'content placeholder' ) } ],
 		]

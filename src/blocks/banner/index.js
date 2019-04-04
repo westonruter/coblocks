@@ -41,7 +41,7 @@ const blockAttributes = {
 	...BackgroundAttributes,
 	layout: {
 		type: 'string',
-		default: 'full',
+		default: 'right',
 	},
 	heading: {
 		type: 'string',
@@ -57,7 +57,7 @@ const blockAttributes = {
 	},
 	contentAlign: {
 		type: 'string',
-		default: 'center',
+		default: 'left',
 	},
 	textColor: {
 		type: 'string',
