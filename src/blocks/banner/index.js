@@ -53,7 +53,7 @@ const blockAttributes = {
 	},
 	align: {
 		type: 'string',
-		default: 'wide',
+		default: 'full',
 	},
 	contentAlign: {
 		type: 'string',
