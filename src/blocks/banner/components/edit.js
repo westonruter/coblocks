@@ -164,7 +164,7 @@ class Edit extends Component {
 		);
 
 		const classes = classnames(
-			'wp-block-coblocks-banner', {
+			className, {
 				[ `coblocks-banner-${ coblocks.id }` ] : coblocks && ( typeof coblocks.id != 'undefined' ),
 			}
 		);
