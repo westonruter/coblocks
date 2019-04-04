@@ -138,91 +138,91 @@ const settings = {
 
 	save( { attributes, className } ) {
 		const {
-				coblocks,
-				layout,
-				heading,
-				content,
-				backgroundImg,
-				backgroundType,
-				paddingSize,
-				backgroundColor,
-				customBackgroundColor,
-				customTextColor,
-				textColor,
-				contentAlign,
-				focalPoint,
-				hasParallax,
-				videoMuted,
-				videoLoop,
-				height,
-			} = attributes;
+			coblocks,
+			layout,
+			heading,
+			content,
+			backgroundImg,
+			backgroundType,
+			paddingSize,
+			backgroundColor,
+			customBackgroundColor,
+			customTextColor,
+			textColor,
+			contentAlign,
+			focalPoint,
+			hasParallax,
+			videoMuted,
+			videoLoop,
+			height,
+		} = attributes;
 
-			const textClass = getColorClassName( 'color', textColor );
-			const backgroundClass = getColorClassName( 'background-color', backgroundColor );
+		const textClass = getColorClassName( 'color', textColor );
+		const backgroundClass = getColorClassName( 'background-color', backgroundColor );
 
-			let classlist = {
-				'has-text-color': textColor || customTextColor,
-				[ textClass ]: textClass,
-				[ `coblocks-banner-${ coblocks.id }` ] : coblocks && ( typeof coblocks.id != 'undefined' ),
-			};
+		let classlist = {
+			'has-text-color': textColor || customTextColor,
+			[ textClass ]: textClass,
+			[ `coblocks-banner-${ coblocks.id }` ] : coblocks && ( typeof coblocks.id != 'undefined' ),
+		};
 
-			const classes = classnames( classlist );
+		const classes = classnames( classlist );
 
-			const styles = {
-				color: textClass ? undefined : customTextColor,
-			};
+		const styles = {
+			color: textClass ? undefined : customTextColor,
+		};
 
-			const innerClasses = classnames(
-				'wp-block-coblocks-banner__inner',
-				...BackgroundClasses( attributes ), {
-					[ `banner-${ layout }-align` ] : layout,
-					'has-text-color': textColor && textColor.color,
-					'has-padding': paddingSize && paddingSize != 'no',
-					[ `has-${ paddingSize }-padding` ] : paddingSize && paddingSize != 'advanced',
-					[ backgroundClass ]: backgroundClass,
-					[ `has-${ contentAlign }-content` ]: contentAlign,
-			} );
+		const innerClasses = classnames(
+			'wp-block-coblocks-banner__inner',
+			...BackgroundClasses( attributes ), {
+				[ `banner-${ layout }-align` ] : layout,
+				'has-text-color': textColor && textColor.color,
+				'has-padding': paddingSize && paddingSize != 'no',
+				[ `has-${ paddingSize }-padding` ] : paddingSize && paddingSize != 'advanced',
+				[ backgroundClass ]: backgroundClass,
+				[ `has-${ contentAlign }-content` ]: contentAlign,
+		} );
 
-			const innerStyles = {
-				backgroundColor: backgroundClass ? undefined : customBackgroundColor,
-				backgroundImage: backgroundImg && backgroundType == 'image' ? `url(${ backgroundImg })` : undefined,
-				color: textColor ? textColor.color : undefined,
-				backgroundPosition: focalPoint && ! hasParallax ? `${ focalPoint.x * 100 }% ${ focalPoint.y * 100 }%` : undefined,
-				minHeight: height,
-			};
+		const innerStyles = {
+			backgroundColor: backgroundClass ? undefined : customBackgroundColor,
+			backgroundImage: backgroundImg && backgroundType == 'image' ? `url(${ backgroundImg })` : undefined,
+			color: textColor ? textColor.color : undefined,
+			backgroundPosition: focalPoint && ! hasParallax ? `${ focalPoint.x * 100 }% ${ focalPoint.y * 100 }%` : undefined,
+			minHeight: height,
+		};
 
-			return (
-				<div className={ classes } style={ styles } >
-					<div className={ innerClasses } style={ innerStyles }>
-						{ backgroundType == 'video' ?
-							<div className="coblocks-video-background">
-								<video playsinline="" autoplay="" muted={ videoMuted } loop={ videoLoop } src={ backgroundImg } ></video>
-							</div>
-						: null }
-						<div className="wp-block-coblocks-banner__content">
-							{ ( ! RichText.isEmpty( heading ) ) && (
-								<RichText.Content
-									tagName="h2"
-									className="wp-block-coblocks-banner-title"
-									value={ heading }
-								/>
-							) }
-
-							{ ( ! RichText.isEmpty( content ) ) && (
-								<RichText.Content
-									tagName="p"
-									className="wp-block-coblocks-banner-content"
-									value={ content }
-								/>
-							) }
+		return (
+			<div className={ classes } style={ styles } >
+				<div className={ innerClasses } style={ innerStyles }>
+					{ backgroundType == 'video' ?
+						<div className="coblocks-video-background">
+							<video playsinline="" autoplay="" muted={ videoMuted } loop={ videoLoop } src={ backgroundImg } ></video>
 						</div>
+					: null }
+					<div className="wp-block-coblocks-banner__content">
+						{ ( ! RichText.isEmpty( heading ) ) && (
+							<RichText.Content
+								tagName="h2"
+								className="wp-block-coblocks-banner-title"
+								value={ heading }
+							/>
+						) }
 
-						<div className="wp-block-coblocks-banner__buttons">
-							<InnerBlocks.Content />
-						</div>
+						{ ( ! RichText.isEmpty( content ) ) && (
+							<RichText.Content
+								tagName="p"
+								className="wp-block-coblocks-banner-content"
+								value={ content }
+							/>
+						) }
+					</div>
+
+					<div className="wp-block-coblocks-banner__buttons">
+						<InnerBlocks.Content />
 					</div>
 				</div>
-			);
+			</div>
+		);
 	},
 };
 
