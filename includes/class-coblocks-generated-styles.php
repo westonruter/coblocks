@@ -68,7 +68,7 @@ class CoBlocks_Generated_Styles {
 			$desktop = array();
 			$tablet  = array();
 			$mobile  = array();
-			$output = '';
+			$output  = '';
 
 			if ( $meta ) {
 
@@ -78,7 +78,7 @@ class CoBlocks_Generated_Styles {
 
 					$important = '';
 
-					if( is_admin() ){
+					if ( is_admin() ) {
 						$important = ' !important';
 					}
 
@@ -133,13 +133,13 @@ class CoBlocks_Generated_Styles {
 				}
 			}
 
-			//add media query for shape divider height on frontend
-			$responsive_height    = get_post_meta( $post->ID, '_coblocks_responsive_height', true );
-			$responsive_height 	  = json_decode( $responsive_height );
+			// add media query for shape divider height on frontend
+			$responsive_height = get_post_meta( $post->ID, '_coblocks_responsive_height', true );
+			$responsive_height = json_decode( $responsive_height );
 
-			if( $responsive_height && !is_admin() ){
+			if ( $responsive_height && ! is_admin() ) {
 				foreach ( $responsive_height as $dividerKey => $dividerObj ) {
-					if( !empty( $dividerObj ) ){
+					if ( ! empty( $dividerObj ) ) {
 						foreach ( $dividerObj as $dividerElement => $dividerElObj ) {
 							$output .= '@media only screen and (max-width: ' . apply_filters( 'coblocks_tablet_breakpoint', '768px' ) . ') {';
 								if( $dividerElement == 'height' && isset( $dividerElObj->heightTablet ) ){
@@ -180,12 +180,11 @@ class CoBlocks_Generated_Styles {
 
 						}
 					}
-
 				}
 			}
 
 			return wp_strip_all_tags( $output );
-			
+
 		}
 	}
 }
