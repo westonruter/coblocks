@@ -49,7 +49,6 @@ const blockAttributes = {
 	},
 	content: {
 		type: 'string',
-		default: __( 'Prompt visitors to take action with a call to action and a button.' ),
 	},
 	align: {
 		type: 'string',
