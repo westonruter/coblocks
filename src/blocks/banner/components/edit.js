@@ -207,13 +207,13 @@ class Edit extends Component {
 			value  : height
 		};
 
-		if( this.state.innerWidth <= 768 && this.state.innerWidth > 514 ){
+		if ( this.state.innerWidth <= 768 && this.state.innerWidth > 514 ) {
 			heightResizer = {
 				target : 'heightTablet',
 				value  : ( heightTablet ) ? heightTablet : height,
 			};
 
-		}else if( this.state.innerWidth <= 514 ){
+		} else if ( this.state.innerWidth <= 514 ) {
 			heightResizer = {
 				target : 'heightMobile',
 				value  : ( heightMobile ) ? heightMobile : height,
@@ -276,8 +276,6 @@ class Edit extends Component {
 
 							toggleSelection( true );
 							this.setState( { resizing: false } );
-
-							//update meta
 							this.saveMeta( 'height' );
 						} }
 						onResizeStart={ () => {

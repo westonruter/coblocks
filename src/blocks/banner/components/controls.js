@@ -40,16 +40,6 @@ class Controls extends Component {
 		let getBlockContents = select( 'core/editor' ).getBlock( clientId );
 
 		const toolbarControls = [ {
-			icon: icons.bannerLeft,
-			title: __( 'Left' ),
-			isActive: layout === 'left',
-			onClick: () => {
-				setAttributes( { layout: 'left', contentAlign: 'left' } );
-				if ( getBlockContents.innerBlocks ) {
-					dispatch( 'core/editor' ).updateBlockAttributes( getBlockContents.innerBlocks[0].clientId, { contentAlign: 'left' });
-				}
-			},
-		}, {
 			icon: icons.bannerRight,
 			title: __( 'Right' ),
 			isActive: layout === 'right',
@@ -57,6 +47,16 @@ class Controls extends Component {
 				setAttributes( { layout: 'right', contentAlign: 'left' } );
 				if ( getBlockContents.innerBlocks ) {
 					dispatch( 'core/editor' ).updateBlockAttributes( getBlockContents.innerBlocks[0].clientId, { contentAlign: 'right' });
+				}
+			},
+		}, {
+			icon: icons.bannerLeft,
+			title: __( 'Left' ),
+			isActive: layout === 'left',
+			onClick: () => {
+				setAttributes( { layout: 'left', contentAlign: 'left' } );
+				if ( getBlockContents.innerBlocks ) {
+					dispatch( 'core/editor' ).updateBlockAttributes( getBlockContents.innerBlocks[0].clientId, { contentAlign: 'left' });
 				}
 			},
 		}, {
