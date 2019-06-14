@@ -65,6 +65,7 @@ import * as hero from './blocks/hero';
 import * as stacked from './blocks/gallery-stacked';
 import * as masonry from './blocks/gallery-masonry';
 import * as carousel from './blocks/gallery-carousel';
+import * as collage from './blocks/gallery-collage';
 
 export function registerBlocks () {
 	[
@@ -94,6 +95,7 @@ export function registerBlocks () {
 		stacked,
 		carousel,
 		masonry,
+		collage,
 	].forEach( ( block ) => {
 
 		if ( ! block ) {
