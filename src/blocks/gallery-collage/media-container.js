@@ -15,7 +15,7 @@ import MediaContainer from './media-container';
  */
 const { __ } = wp.i18n;
 const { Component, Fragment } = wp.element;
-const { BlockControls, MediaPlaceholder, MediaUpload } = wp.editor;
+const { BlockControls, MediaPlaceholder, MediaUpload } = wp.blockEditor;
 const { IconButton, ResizableBox, Toolbar, DropZone, Spinner } = wp.components;
 const { isBlobURL } = wp.blob;
 

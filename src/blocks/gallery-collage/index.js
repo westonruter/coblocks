@@ -18,7 +18,7 @@ import { BackgroundAttributes, BackgroundClasses, BackgroundStyles, BackgroundVi
  * WordPress dependencies
  */
 const { __ } = wp.i18n;
-const { RichText, getFontSizeClass, getColorClassName } = wp.editor;
+const { RichText, getFontSizeClass, getColorClassName } = wp.blockEditor;
 
 /**
  * Block constants
@@ -27,7 +27,7 @@ const name = 'gallery-collage';
 
 const title = __( 'Collage' );
 
-const icon = icons.stacked;
+const icon = icons.collage;
 
 const keywords = [
 	__( 'gallery' ),
@@ -50,6 +50,8 @@ const settings = {
 	title: title,
 
 	description: __( 'Display images in a collage gallery.' ),
+
+	category: 'coblocks-galleries',
 
 	keywords: keywords,
 

@@ -31,7 +31,7 @@ const { Component, Fragment } = wp.element;
 const { compose } = wp.compose;
 const { withSelect } = wp.data;
 const { withNotices, Spinner } = wp.components;
-const { withColors, withFontSizes, MediaUpload, MediaPlaceholder } = wp.editor;
+const { withColors, withFontSizes, MediaUpload, MediaPlaceholder } = wp.blockEditor;
 const { isBlobURL } = wp.blob;
 
 class GalleryCollageEdit extends Component {
